@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheque</title>
+</head>
+<body>
+  <h1>Cheque Especial</h1>
+
+  <span>Saldo da conta:</span>
+  <input type="number" id="ipt_saldo">
+  <br>
+
+  <span>Valor do débito:</span>
+  <input type="number" id="ipt_debito">
+  <br>
+  <button onclick="Calcular()">Analisar Conta</button>
+  <div id="div_msg"></div>
+</body>
+</html>
+<script>
+  var saldo = 0;
+  function Calcular(){
+    saldo = Number(ipt_saldo.value);
+    var debito = Number(ipt_debito.value);
+    saldo = saldo - debito;
+    if (saldo < 0){
+       div_msg.innerHTML = `<span style="color: red; font-weight: bold;">O saldo atual da conta corrente é ${saldo}</span><br>`
+    } else{
+      div_msg.innerHTML = `O saldo atual da conta corrente é ${saldo}`
+    }
+  }
+</script>

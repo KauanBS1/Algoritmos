@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finanças</title>
+</head>
+<body>
+  <h1>Finanças</h1>
+  <span>Saldo na conta do banco</span>
+  <br>
+  <input type="number" id="ipt_saldo">
+  <br>
+
+  <button onclick="Verificar()">Verificar finanças</button>
+  <br>
+  <div id="div_msg"></div>
+</body>
+</html>
+<script>
+  function Verificar(){
+      var saldo = Number(ipt_saldo.value);
+
+
+    if (saldo > 0) {
+    div_msg.innerHTML = `Saldo positivo! sorriso`;
+  } else{
+    if (saldo == 0) {
+      div_msg.innerHTML = `Conta zerada!`;
+    } else {
+      div_msg.innerHTML = `Está devendo!`;
+    }
+  }
+  }
+</script>

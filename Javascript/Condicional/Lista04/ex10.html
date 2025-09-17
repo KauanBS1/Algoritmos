@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Streaming</title>
+</head>
+<body>
+  <h1>Streaming</h1>
+
+  <span>Última série (SITCOM) que você assistiu</span>
+  <br>
+  <input type="text" id="ipt_serie">
+  <br>
+
+  <span>Total de episódios assistidos</span>
+  <br>
+  <input type="text" id="ipt_qtdEpiso">
+  <br>
+
+  <button onclick="Calcular()">Verificar Nível</button>
+  <br>
+  <div id="div_msg"></div>
+</body>
+</html>
+<script>
+  function Calcular(){
+    var nomeSerie = ipt_serie.value;
+    var qtdEpisodios = Number(ipt_qtdEpiso.value);
+    var totalDuracaoMin = qtdEpisodios * 22;
+    var totalDuracaoHoras = totalDuracaoMin / 60;
+
+    div_msg.innerHTML = `Vejo que você gosta da série ${nomeSerie}`;
+    if (totalDuracaoHoras > 30){
+      div_msg.innerHTML += `<br>Uau, você realmente gosta dessa série!`;
+    }
+
+  }
+</script>

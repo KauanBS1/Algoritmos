@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analise CNH</title>
+</head>
+<body>
+  <h1>Análise CNH</h1>
+  <span>Nome do Aluno:</span>
+  <br>
+  <input type="text" id="ipt_nomeAluno">
+  <br>
+
+  <span>Idade do Aluno:</span>
+  <br>
+  <input type="text" id="ipt_idadeAluno">
+  <br>
+  <button onclick="Avaliar()">Avaliar Aluno</button>
+  <br>
+  <div id="div_msg"></div>
+</body>
+</html>
+<script>
+  function Avaliar() {
+    var nomeAluno = ipt_nomeAluno.value;
+    var idadeAluno = Number(ipt_idadeAluno.value);
+
+    if (idadeAluno >= 18) {
+      div_msg.innerHTML = `${nomeAluno}, vamos tirar a CNH?`;
+    } else{
+      div_msg.innerHTML = `${nomeAluno}, vai jogar Playstation!`
+    }
+  }
+</script>

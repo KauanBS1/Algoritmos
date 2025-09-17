@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <span>Numero</span>
+  <input type="number" id="ipt_num"><br>
+  <button onclick="Validar()">Validar</button>
+  <br>
+  <div id="div_msg"></div>
+</body>
+</html>
+<script>
+  function Validar() {
+    var num = Number(ipt_num.value);
+    if (num >= 0 && num <=100) {
+      div_msg.innerHTML = `Dentro do intervalo 0 e 100`;
+    } else {
+      div_msg.innerHTML = `Fora do intervalo 0 e 100`;
+    }
+  }
+</script>
