@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Elevador</h1>
+
+    <span>Quantidade de Homens:</span>
+    <br>
+    <input type="text" id="ipt_qtdHomens">
+    <br>
+
+    <span>Quantidade de Mulheres:</span>
+    <br>
+    <input type="text" id="ipt_qtdMulheres">
+    <br>
+
+    <button onclick="Calcular()">Ligar elevador</button>
+    <br>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function Calcular(){
+        var qtdHomens = Number(ipt_qtdHomens.value);
+        var qtdMulheres = Number(ipt_qtdMulheres.value);
+        var pesoHomens = qtdHomens * 90;
+        var pesoMulheres = qtdMulheres * 70;
+        var pesoTotal = pesoHomens + pesoMulheres;
+
+        if(pesoTotal > 500){
+            var pesoDiferencaLimite = pesoTotal - 500;
+            div_msg.innerHTML = `<span style="color:red;">Alguém precisa descer. Precisa perder ${pesoDiferencaLimite}kg para mover o elevador</span>`;
+            console.log(pesoDiferencaLimite)
+            console.log(pesoTotal)
+        } else {
+            div_msg.innerHTML = `<span style="color: green;">Elevador vai se mover, pois está com ${pesoTotal}kg</span>`
+            console.log(pesoTotal)
+        }
+    }
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Frequência Aluno</h1>
+    <span>Insira a frequência do Aluno:</span>
+    <br>
+    <input type="number" id="ipt_freq">
+    <br>
+
+    <button onclick="Analisar()">Analisar Frequencia</button>
+    <br>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function Analisar(){
+        var frequencia = Number(ipt_freq.value);
+        var imgSRC = "imgs/inteligente.png";
+        if(frequencia < 50){
+            imgSRC = "imgs/turista.png";
+        }
+
+        div_msg.innerHTML = `<img src="${imgSRC}">`;
+    }
+</script>

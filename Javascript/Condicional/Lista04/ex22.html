@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Análise de Temperatura</h1>
+    <span>Temperatura do Ambiente:</span>
+    <br>
+    <input type="number" id="ipt_tempAmbiente">
+    <br>
+
+    <button onclick="Verificar()">Verificar Clima</button>
+    <br>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function Verificar(){
+        var temperatura = Number(ipt_tempAmbiente.value);
+        var imgSRC = "imgs/podre.png";
+        if(temperatura < 10){
+            imgSRC = "imgs/maca.png";
+        } 
+        div_msg.innerHTML = `<br><img src="${imgSRC}">`
+    }
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04</title>
+</head>
+<body>
+    <h1>Rola a pizza?</h1>
+
+    <span>Valor da pizza:</span>
+    <input type="text" id="ipt_valorPizza">
+    <br>
+    <span>Quantidade de amigos:</span>
+    <input type="text" id="ipt_qtdAmigos">
+    <br>
+    <button onclick="calcular()">Rola a pizza?</button>
+    <br>
+    <div id="div_res"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var valorPizza = Number(ipt_valorPizza.value);
+        var qtdAmigos = Number(ipt_qtdAmigos.value);
+        var valor = valorPizza/qtdAmigos;
+
+        div_res.innerHTML = `Cada amigo vai pagar R$${valor} pela pizza!`;
+
+        if (valor > 20){
+            div_res.innerHTML += `<br> <span style='color: red; font-weight: bold; font-style: italic;'>Deu ruim! Pizza muito cara!</span>`
+        }
+    }
+</script>

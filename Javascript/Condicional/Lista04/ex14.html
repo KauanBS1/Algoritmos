@@ -6,6 +6,32 @@
   <title>Conta Corrente</title>
 </head>
 <body>
-  
+  <h1>Conta Corrente</h1>
+  <span>Saldo da conta:</span>
+  <br>
+  <input type="number" id="ipt_saldo">
+  <br>
+
+  <span>Valor do Débito:</span>
+  <br>
+  <input type="number" id="ipt_valorDebito">
+  <br>
+
+  <button onclick="Analisar()">Analisar conta</button>
+  <br>
+  <div id="div_msg"></div>
 </body>
 </html>
+<script>
+  function Analisar(){
+    var saldo = Number(ipt_saldo.value);
+    var debito = Number(ipt_valorDebito.value);
+
+    var saldoFinal = saldo - debito;
+    if(saldoFinal > 0){
+      div_msg.innerHTML = `<span style="color:blue; font-style: italic;">o saldo atual da conta corrente é ${saldoFinal}</span>`
+    } else {
+      div_msg.innerHTML = `<span style="color:red; font-weight: bold;">o saldo atual da conta corrente é ${saldoFinal}</span>`
+    }
+  }
+</script>

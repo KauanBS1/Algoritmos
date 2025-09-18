@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mercado BOM DOCE</h1>
+    <span>Quantidade de Chocolates</span>
+    <br>
+    <input type="number" id="ipt_qtdChoco">
+    <br>
+
+    <button onclick="Calcular()">Compra</button>
+    <br>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function Calcular(){
+        var qtdChoco = Number(ipt_qtdChoco.value);
+        var valorChoco = 3;
+        if(qtdChoco > 12){
+            valorChoco = 2.5
+        }
+        
+        var valorFinal = qtdChoco * valorChoco;
+        div_msg.innerHTML = `o valor da sua compra foi de ${valorFinal}`;
+    }
+</script>

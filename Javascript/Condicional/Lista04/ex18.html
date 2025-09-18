@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>É divisivel?</h1>
+    <span>Primeiro Número:</span>
+    <br>
+    <input type="number" id="ipt_n1">
+    <br>
+
+    <span>Segundo Número:</span>
+    <br>
+    <input type="number" id="ipt_n2">
+    <br>
+
+    <button onclick="Testar()">Testar</button>
+    <br>
+    <div id="div_msg"></div>
+
+    
+</body>
+</html>
+<script>
+    function Testar(){
+        var n1 = Number(ipt_n1.value);
+        var n2 = Number(ipt_n2.value);
+        var imgSRC = "imgs/gostar.png"
+        if(n1 % n2 != 0){
+            imgSRC = "imgs/nao-gosto.png"
+        }
+        div_msg.innerHTML = `<img src="${imgSRC}">`;
+    }
+</script>

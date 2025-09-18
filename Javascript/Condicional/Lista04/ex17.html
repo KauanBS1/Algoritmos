@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Par ou Ímpar</h1>
+
+    <span>Insira um valor</span>
+    <br>
+    <input type="number" id="ipt_valor">
+    <br>
+
+    <button onclick="Calcular()">Analisar</button>
+    <br>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function Calcular(){
+        var valor = Number(ipt_valor.value);
+
+        if(valor % 2 == 0){
+            div_msg.innerHTML = `<span style="backgroud: yellow; color: red;">Esse número é PAR</span>`
+        } else {
+            div_msg.innerHTML = `<span style="color: blue; font-weight: bold;">Esse número é ÍMPAR</span>`
+        }
+    }
+</script>

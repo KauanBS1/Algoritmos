@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Economia</h1>
+    <span>Meta de Economia:</span>
+    <br>
+    <input type="number" id="ipt_metaEcono">
+    <br>
+
+    <span>Valor Guardado:</span>
+    <br>
+    <input type="number" id="ipt_valorGuardado">
+    <br>
+
+    <button onclick="Analisar()">Analisar economia</button>
+    <br>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function Analisar(){
+        var metaEcono = Number(ipt_metaEcono.value);
+        var valorGuardado = Number(ipt_valorGuardado.value);
+
+        if(valorGuardado > metaEcono){
+            var diferenca = valorGuardado - metaEcono;
+            div_msg.innerHTML = `Parabéns, meta alcançada!
+            <br> Meta ultrapassada em ${diferenca.toLocaleString('pt-BR', {style: "currency", currency: "BRL"})}`;
+        } else {
+            var diferenca = metaEcono - valorGuardado ;
+            div_msg.innerHTML = `Força! Ainda em busca da meta!
+            <br> Falta ${diferenca.toLocaleString('pt-BR', {style: "currency", currency: "BRL"})}`;
+        }
+    }
+</script>
